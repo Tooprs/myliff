@@ -5,7 +5,7 @@ form.addEventListener('submit', (e) => {
     db.collection('users').doc(userId).set({
         hn : form.hn.value,
         name : form.name.value,
-        surname : form.surname.value
+        surname : form.surname.value,
         personId : form.id.value
     });
     liff.closeWindow();
