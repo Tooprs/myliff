@@ -15,7 +15,7 @@ main();
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    log(userId);
+    console.log(userId);
     db.collection('users').doc(userId).set({
         hn : form.hn.value,
         name : form.name.value,
