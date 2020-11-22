@@ -26,7 +26,7 @@ form.addEventListener('submit', (e) => {
       method: 'POST',
       headers: {
         authorization: 'Bearer VEf+ipeUMMp/QonudMHpdyHPWfCIk24QiHpKMzdXpqPv2J3/US7PzbUY0GypLLVc6/4RbBse0rNdQjk86H9axkx02YojOgDiTDoGx7dtYIHMwijYljImXXmZZ8KryIkiXVYZW+B+XKLR6PDNXSqGCAdB04t89/1O/w1cDnyilFU='
-    }),
+    });
     liff.closeWindow();
 });
 
