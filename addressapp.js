@@ -1,7 +1,7 @@
 const form = document.querySelector('#address');
 let userId = '';
 async function main() {
- await liff.init({ liffId: "1654209143-W6aLAa0A" });
+ await liff.init({ liffId: "1655321339-DzWprLEy" });
  liff.ready.then(() => {
    if (!liff.isLoggedIn()) {
      liff.login()
