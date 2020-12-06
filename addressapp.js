@@ -8,10 +8,22 @@ async function main() {
    };
    liff.getProfile().then(profile =>{
      userId = profile.userId;
-   }) 
+   });
+   liff.sendMessages([
+    {
+      type: 'text',
+      text: '#ตรวจสอบยา'
+    }
+  ])
+    .then(() => {
+      console.log('message sent');
+    })
+    .catch((err) => {
+      console.log('error', err);
+    }); 
  })
 }
-
+main();
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     let totalAddress = `${form.place.value} ${form.addressnum.value} ${form.road.value} ${form.district1.value} ${form.district2.value} ${form.province.value} ${form.postCode.value}`;
