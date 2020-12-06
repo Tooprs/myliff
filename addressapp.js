@@ -15,12 +15,7 @@ async function main() {
       text: '#ตรวจสอบยา'
     }
   ])
-    .then(() => {
-      console.log('message sent');
-    })
-    .catch((err) => {
-      console.log('error', err);
-    }); 
+    
  })
 }
 main();
