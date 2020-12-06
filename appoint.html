@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learning HTML</title>
+</head>
+<body>
+   <h1>นัดพบแพทย์</h1>
+   <br> <br>
+   <form id="appointment" >
+       <label for="hn">HN :</label>
+       <input type="number" id="hn" name="hn" required placeholder="กรุณาพิมพ์ HN">
+       <br> <br>
+       <label for="name">ชื่อ :</label>
+       <input type="text" id="name" name="name" required placeholder="กรอกชื่อผู้ป่วย">
+       <br> <br>
+       <label for="surname">นามสกุล :</label>
+       <input type="text" id="surname" name="surname" required placeholder="กรอกนามสกุลผู้ป่วย">
+       <br> <br>
+       <label for="doctor">แพทย์ที่นัด :</label>
+       <select id="doctor" name="doctor">
+        <option value="none">กรุณาเลือกแพทย์ที่รักษา</option>   
+        <option value="พรรักษา">พ.พรรักษา</option>
+        <option value="ชญานุตม์">พ.ชญานุตม์</option>
+        <option value="ชนันยา">พ.ชนันยา</option>
+        <option value="นันทวัฒน์">พ.นันทวัฒน์</option>
+      </select>
+      <br> <br>
+       <label for="date">วันที่นัด :</label>
+       <input type="date" id="date" name="date" required >
+       <br> <br>
+       <input type="submit" name="" id="">
+   </form>
+   <script src="https://static.line-scdn.net/liff/edge/versions/2.4.1/sdk.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script> 
+    
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyBT2kp4K49JZZld2x0DlPc26htXAy6ZAkU",
+        authDomain: "line-bot-7769c.firebaseapp.com",
+        databaseURL: "https://line-bot-7769c.firebaseio.com",
+        projectId: "line-bot-7769c",
+        storageBucket: "line-bot-7769c.appspot.com",
+        messagingSenderId: "318833172832",
+        appId: "1:318833172832:web:c7761021702b5f14bc7e05",
+        measurementId: "G-SMTZR47DPY"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+      //db.settings({timestampsInSnapshots : true});
+    </script>
+    <script src="appointapp.js"></script>
+
+</body>
+
+</html>
