@@ -10,15 +10,14 @@ async function main() {
      userId = profile.userId;
    }) 
  })
-}
+}ว
 main();
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     console.log(userId);
-    db.collection('admin').doc(form.team.value).set({
+    db.collection(form.team.value).doc(userId).set({
         name : form.name.value,
-        lineuid : userId
-    });
+        });
     
     liff.closeWindow();
 });

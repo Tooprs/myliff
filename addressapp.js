@@ -21,7 +21,7 @@ async function main() {
 main();
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    let totalAddress = `${form.place.value} ${form.addressnum.value} ${form.road.value} ${form.district1.value} ${form.district2.value} ${form.province.value} ${form.postCode.value}`;
+    let totalAddress = `${form.place.value} ${form.addressnum.value} ถนน${form.road.value} แขวง${form.district1.value} เขต${form.district2.value} จังหวัด${form.province.value} ${form.postCode.value}`;
     db.collection('users').doc(userId).update({
         address : totalAddress
         });
