@@ -36,6 +36,7 @@
     const dateNotify = form.date.value;
     const appointNotify = firebase.functions().httpsCallable('appointNotify');
     appointNotify({date : dateNotify});
+    console.log(dateNotify);
     });
     
     
