@@ -9,12 +9,7 @@ async function main() {
    liff.getProfile().then(profile =>{
      userId = profile.userId;
    });
-   liff.sendMessages([
-    {
-      type: 'text',
-      text: '#ตรวจสอบยา'
-    }
-  ])
+   
     
  })
 }
@@ -25,6 +20,12 @@ form.addEventListener('submit', (e) => {
     db.collection('users').doc(userId).update({
         address : totalAddress
         }).then(() =>{
+          liff.sendMessages([
+              {
+                type: 'text',
+                text: '#ตรวจสอบยา'
+              }
+          ])
           liff.closeWindow();
         });
     
