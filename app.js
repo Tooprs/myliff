@@ -23,8 +23,8 @@ form.addEventListener('submit', (e) => {
         surname : document.getElementById("surname").value,
         lineId : document.getElementById("lineid").value,
         telNum : document.getElementById("tel").value
+    }).then(() =>{
+      liff.closeWindow()
     });
-    
-    liff.closeWindow();
-});
+  });
 
