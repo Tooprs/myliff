@@ -1,34 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Learning HTML</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    background: white;
+    padding: 40px;
+    width: 600px;
+    max-width: calc(100% - 60px);
+}
+
+.form-element {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+input {
+    border: 1px solid #d0d2e2;
+    line-height: 2;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+form button {
+    width: 100%;
+    padding: 20px;
+    color: white;
+    background: #1aaaef;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+}
+
+.radio-button label {
+    margin-bottom: 20px;
+}
+  </style>  
+  <title>นัดพบแพทย์ออนไลน์</title>
 </head>
 <body>
-   <h1>นัดพบแพทย์</h1>
-   <br> <br>
-   <form id="appointment" >
-       <label for="hn">HN :</label>
-       <input type="text" id="hn" name="hn" required placeholder="กรุณาพิมพ์ HN">
-       <br> <br>
-       <label for="name">ชื่อ :</label>
-       <input type="text" id="name" name="name" required placeholder="กรอกชื่อผู้ป่วย">
-       <br> <br>
-       <label for="surname">นามสกุล :</label>
-       <input type="text" id="surname" name="surname" required placeholder="กรอกนามสกุลผู้ป่วย">
-       <br> <br>
-       <label for="doctor">แพทย์ที่นัด :</label>
-       <select id="doctor" name="doctor">
-        <option value="none">กรุณาเลือกแพทย์ที่รักษา</option>   
-        <option value="พรรักษา">พ.พรรักษา</option>
-        <option value="ชญานุตม์">พ.ชญานุตม์</option>
-        <option value="ชนันยา">พ.ชนันยา</option>
-        <option value="นันทวัฒน์">พ.นันทวัฒน์</option>
-      </select>
-      <br> <br>
-       <label for="date">วันที่นัด :</label>
-       <input type="date" id="date" name="date" required >
-       <br> <br>
-       <input type="submit" name="" id="">
+  
+  <form id="appointment" >
+    <div class="form-element"><h1>นัดพบแพทย์</h1></div>    
+    <div class="form-element radio-button">
+        <p>กรุณาเลือกแผนกที่ตรวจ</p>
+        <label for="gen">
+        <input type="radio" id="gen" name="sub" value="gen">
+        <span>ศัลยกรรมทั่วไป</span>
+        
+        <br>
+        <input type="radio" id="uro" name="sub" value="uro">
+        <label for="uro">
+        <span>ศัลยกรรมทางเดินปัสสาวะ</span>
+        <br>
+        <input type="radio" id="other" name="sub" value="other">
+        <label for="other">
+        <span>อื่นๆ</span>
+    </div>
+    <div class="form-element">
+        <label for="doctor">แพทย์ที่นัด :</label>
+        <select id="doctor" name="doctor">
+            <option value="none">กรุณาเลือกแพทย์ที่รักษา</option>   
+            <option value="พรรักษา">พ.พรรักษา</option>
+            <option value="ชญานุตม์">พ.ชญานุตม์</option>
+            <option value="ชนันยา">พ.ชนันยา</option>
+            <option value="นันทวัฒน์">พ.นันทวัฒน์</option>
+        </select>  
+    </div>
+        
+    <div class="form-element">
+        <label for="date">วันที่นัด :</label>
+        <input type="date" id="date" name="date" required >
+    </div>
+        
+    <button type="submit">ยื่นนัดออนไลน์</button>
+       
    </form>
    <script src="https://static.line-scdn.net/liff/edge/versions/2.4.1/sdk.js"></script>
    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>

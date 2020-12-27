@@ -2,7 +2,7 @@ const form = document.querySelector('#appointment');
 let userId = '';
 let appointDate = '';
 async function main() {
- await liff.init({ liffId: "1655321436-5OMNvO2Z" });
+ await liff.init({ liffId: "1655373907-pEmwWrVk" });
  liff.ready.then(() => {
    if (!liff.isLoggedIn()) {
      liff.login()
@@ -20,9 +20,11 @@ form.addEventListener('submit', (e) => {
     db.collection('users').doc(userId).update({
        appointment : appointDate,
        doctor : doctorName 
+    }).then(() =>{
+      liff.closeWindow();
     });
-    console.log(appointDate, typeof appointDate);
     
-    liff.closeWindow();
+    
+    
 });
 
