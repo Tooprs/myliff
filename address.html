@@ -1,40 +1,98 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Learning HTML</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    background: white;
+    padding: 60px;
+    width: 550px;
+    max-width: calc(100% - 60px);
+}
+
+.form-element {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+}
+
+input {
+    border: 1px solid #d0d2e2;
+    line-height: 2;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+form button {
+    width: 100%;
+    padding: 20px;
+    color: white;
+    background: #1aaaef;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+}
+  </style>
+    <title>กรอกที่อยู่จัดส่งยา</title>
 </head>
 <body>
-   <h1>กรุณากรอกที่อยู่สำหรับส่งยาทางไปรษณีย์</h1>
-   <br> <br>
    <form id="address">
+     <div class="form-element"><h1>กรุณากรอกที่อยู่สำหรับส่งยาทางไปรษณีย์</h1></div>
+     <div class="form-element">
        <label for="name">ชื่อ-สกุล ผู้รับ :</label>
        <input type="text" id="name" name="name" required placeholder="ชื่อผู้รับพัสดุไปรษณีย์">
-       <br> <br>
+     </div>  
+     <div class="form-element">
        <label for="place">ส่งที่ :</label>
        <input type="text" id="place" name="place"  placeholder="รายละเอียดสถานที่ที่ให้จัดส่ง">
-      <br> <br>
-      <label for="addressnum">บ้านเลขที่ :</label>
-       <input type="text" id="addressnum" name="addressnum" >
-      <br> <br>
-      <label for="road">ถนน/ซอย :</label>
-       <input type="text" id="road" name="road"  >
-      <br> <br>
-      <label for="district1">แขวง :</label>
-       <input type="text" id="district1" name="district1" required >
-      <br> <br>
-      <label for="district2">เขต :</label>
-       <input type="text" id="district2" name="district2" required >
-      <br> <br>
-      <label for="province">จังหวัด :</label>
-       <input type="text" id="province" name="province" required >
-      <br> <br>
-      <label for="postCode">รหัสไปรษณีย์ :</label>
+     </div>
+      <div class="form-element">
+        <label for="addressnum">บ้านเลขที่ :</label>
+        <input type="text" id="addressnum" name="addressnum" >
+      </div>
+      <div class="form-element">
+        <label for="road">ถนน/ซอย :</label>
+        <input type="text" id="road" name="road"  >
+      </div>
+      <div class="form-element">
+        <label for="district1">แขวง :</label>
+        <input type="text" id="district1" name="district1" required >
+      </div>
+      
+      <div class="form-element">
+        <label for="district2">เขต :</label>
+        <input type="text" id="district2" name="district2" required >
+      </div>
+      
+      <div class="form-element">
+        <label for="province">จังหวัด :</label>
+        <input type="text" id="province" name="province" required >
+      </div>
+      <div class="form-element">
+        <label for="postCode">รหัสไปรษณีย์ :</label>
        <input type="text" id="postCode" name="postCode" required >
-      <br> <br>
-      <label for="tel">เบอร์โทรติดต่อ :</label>
+      </div>
+      
+      <div class="form-element">
+        <label for="tel">เบอร์โทรติดต่อ :</label>
        <input type="tel" id="tel" name="tel" required >
-      <br> <br>
-      <input type="submit" name="" id="">
+      </div>
+      
+      <button type="submit">ยืนยันที่อยู่</button> 
+      
    </form>
    <script src="https://static.line-scdn.net/liff/edge/versions/2.4.1/sdk.js"></script>
    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>

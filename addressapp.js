@@ -1,7 +1,7 @@
 const form = document.querySelector('#address');
 let userId = '';
 async function main() {
- await liff.init({ liffId: "1655321339-DzWprLEy" });
+ await liff.init({ liffId: "1655373907-lNj51d4k" });
  liff.ready.then(() => {
    if (!liff.isLoggedIn()) {
      liff.login()
@@ -24,8 +24,10 @@ form.addEventListener('submit', (e) => {
     let totalAddress = `${form.place.value} ${form.addressnum.value} ถนน${form.road.value} แขวง${form.district1.value} เขต${form.district2.value} จังหวัด${form.province.value} ${form.postCode.value}`;
     db.collection('users').doc(userId).update({
         address : totalAddress
+        }).then(() =>{
+          liff.closeWindow();
         });
     
-    liff.closeWindow();
+    
 });
 
