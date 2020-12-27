@@ -25,8 +25,10 @@ form.addEventListener('submit', (e) => {
                 type: 'text',
                 text: '#ตรวจสอบยา'
               }
-          ])
-          liff.closeWindow();
+          ]).then(() =>{
+            liff.closeWindow();
+          })
+          
         });
     
     
