@@ -19,17 +19,17 @@ form.addEventListener('submit', (e) => {
     let totalAddress = `${form.place.value} ${form.addressnum.value} ถนน${form.road.value} แขวง${form.district1.value} เขต${form.district2.value} จังหวัด${form.province.value} ${form.postCode.value}`;
     db.collection('users').doc(userId).update({
         address : totalAddress
-        }).then(() =>{
-          liff.sendMessages([
+        }).then(() => {
+            liff.sendMessages([
               {
                 type: 'text',
                 text: '#ตรวจสอบยา'
               }
-          ]).then(() =>{
-            liff.closeWindow();
-          })
+            ])}).then(() => {
+              liff.closeWindow();
+            });
+
           
-        });
     
     
 });
