@@ -1,28 +1,78 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Learning HTML</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    background: white;
+    padding: 60px;
+    width: 550px;
+    max-width: calc(100% - 60px);
+}
+
+.form-element {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+input {
+    border: 1px solid #d0d2e2;
+    line-height: 2;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+form button {
+    width: 100%;
+    padding: 20px;
+    color: white;
+    background: #1aaaef;
+    border-radius: 5px;
+    border: none;
+    font-size: 18px;
+}
+  </style>
+  <title>ลงทะเบียนออนไลน์คลินิก</title>
 </head>
 <body>
-   <h1>ลงทะเบียน</h1>
-   <br> <br>
-   <form id="register">
-       <label for="hn">HN :</label>
-       <input type="text" id="hn" name="hn" required placeholder="กรุณาพิมพ์ HN">
-       <br> <br>
-       <label for="name">ชื่อ :</label>
-       <input type="text" id="name" name="name" required placeholder="กรอกชื่อผู้ป่วย">
-       <br> <br>
-       <label for="surname">นามสกุล :</label>
-       <input type="text" id="surname" name="surname" required placeholder="กรอกนามสกุลผู้ป่วย">
-       <br> <br>
-       <label for="id">เลขประจำตัวประชาชน :</label>
-       <input type="number" id="id" name="id" required placeholder="กรอกเลขประจำตัวประชาชน">
-       <br> <br>
-       <label for="tel">เบอร์โทรติดต่อ :</label>
-       <input type="tel" id="tel" name="tel" required placeholder="เบอร์โทรติดต่อ">
-       <br> <br>
-       <input type="submit" name="" id="">
+   <form id="register" action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfly6qWdFm2b2ZMLyJO7OQSUel326UJCgcdE5Kq2_vimtjViA/formResponse" method="POST">
+    <div class="form-element"><h1>ลงทะเบียน</h1></div>
+    <div class="form-element">
+      <label for="hn">HN :</label>
+      <input type="text" id="hn" name="entry.2107634679" required placeholder="กรุณาพิมพ์ HN ผู้ป่วย">
+    </div>   
+    <div class="form-element">
+      <label for="name">ชื่อ :</label>
+      <input type="text" id="name" name="entry.1378435683" required placeholder="กรอกชื่อผู้ป่วย">
+    </div>
+    <div class="form-element">
+      <label for="surname">นามสกุล :</label>
+      <input type="text" id="surname" name="entry.1588989076" required placeholder="กรอกนามสกุลผู้ป่วย">
+    </div>   
+    <div class="form-element">
+      <label for="tel">เบอร์โทรติดต่อ :</label>
+      <input type="tel" id="tel" name="entry.18300891" required placeholder="เบอร์โทรติดต่อ">
+    </div>   
+    <div class="form-element">
+      <label for="lineid">Line ID :</label>
+      <input type="text" id="lineid" name="entry.670845810" required placeholder="Line ID ให้เจ้าหน้าที่เพิ่มเพื่อน สำหรับใช้ทำvideo call">
+    </div>   
+    <button type="submit">ลงทะเบียน</button> 
+       
    </form>
    <script src="https://static.line-scdn.net/liff/edge/versions/2.4.1/sdk.js"></script>
    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
