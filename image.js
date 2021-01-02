@@ -42,7 +42,8 @@ var firebaseConfig = {
     };
 
 //call https callable function
-const Note = document.getElementById("note").value;
+const form = document.querySelector('#notifyPayment');
+const Note = form.note.value;
 console.log(Note);
 document.getElementById("myBtn").addEventListener("click", (e)=>{
   e.preventDefault();
