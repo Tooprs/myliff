@@ -43,13 +43,12 @@ var firebaseConfig = {
 
 //call https callable function
 const form = document.querySelector('#notifyPayment');
-const Note = form.note.value;
-console.log(Note);
 document.getElementById("myBtn").addEventListener("click", (e)=>{
   e.preventDefault();
+  const Note = form.note.value;
   const paymentNotify = firebase.functions().httpsCallable('paymentNotify');
   paymentNotify({id : userId, imageurl : url, note : Note});
-    console.log(userId, url, Note);
+    liff.closeWindow() ;
   }
 )
    
