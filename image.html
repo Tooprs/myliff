@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        height: 100vh;
+        background: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    form {
+        background: white;
+        padding: 60px;
+        width: 550px;
+        max-width: calc(100% - 60px);
+        font-size: xx-large;
+    }
+    
+    .form-element {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+    
+    form button {
+        width: 100%;
+        padding: 20px;
+        color: white;
+        background: #1aaaef;
+        border-radius: 5px;
+        border: none;
+        font-size: 18px;
+    }
+    
+    </style>
+</head>
+<body>
+    <form id="notifyPayment">
+        <label for="image">กรุณาส่งรูปสลิปการโอนเงิน:</label>
+        <input type="file" id="image" name="image" accept="image/jpeg" required>
+        <br> <br>
+        <label for="note">หมายเหตุ:</label>    
+        <input type="textarea" id="note" name="note">
+        <br> <br> <br>
+        <button type ="submit" id = "myBtn">ส่งหลักฐานชำระเงิน</button>
+    </form>
+    
+
+    <script src="https://static.line-scdn.net/liff/edge/versions/2.4.1/sdk.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script>
+    <script src="image.js"></script>
+
+   
+</body>
+</html>
