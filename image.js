@@ -43,6 +43,7 @@ var firebaseConfig = {
 
 //call https callable function
 const Note = document.getElementById("note").value;
+console.log(Note);
 document.getElementById("myBtn").addEventListener("click", (e)=>{
   e.preventDefault();
   const paymentNotify = firebase.functions().httpsCallable('paymentNotify');
