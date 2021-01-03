@@ -42,7 +42,7 @@ form.addEventListener('submit', (e) => {
        appointment : appointDate,
        doctor : doctorName 
     }).then(() =>{
-      liff.shareTargerPicker([
+      liff.shareTargetPicker([
         {
           type: 'text',
           text: `ยื่นนัดออนไลน์
