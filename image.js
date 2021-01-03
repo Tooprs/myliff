@@ -47,8 +47,10 @@ document.getElementById("myBtn").addEventListener("click", (e)=>{
   e.preventDefault();
   const Note = form.note.value;
   const paymentNotify = firebase.functions().httpsCallable('paymentNotify');
-  paymentNotify({id : userId, imageurl : url, note : Note});
+  paymentNotify({id : userId, imageurl : url, note : Note}).then((result) =>{
     liff.closeWindow() ;
+  });
+    
   }
 )
    
