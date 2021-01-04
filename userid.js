@@ -7,9 +7,9 @@ async function main() {
    };
    liff.getProfile().then(profile =>{
      userId = profile.userId;
+     console.log(userId)
    }) 
  })
 }
 main();
 
-console.log(userId)
