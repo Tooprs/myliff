@@ -15,7 +15,7 @@ const form = document.querySelector('#appointment');
 let userId = '';
 let appointDate = '';
 async function main() {
- await liff.init({ liffId: "1655541441-GL6enzey" });
+ await liff.init({ liffId: "1655321436-5OMNvO2Z" });
  liff.ready.then(() => {
    if (!liff.isLoggedIn()) {
      liff.login()
