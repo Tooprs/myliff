@@ -15,7 +15,7 @@ const form = document.querySelector('#appointment');
 let userId = '';
 let appointDate = '';
 async function main() {
- await liff.init({ liffId: "1655321436-5OMNvO2Z" });
+ await liff.init({ liffId: "1655541441-GL6enzey" });
  liff.ready.then(() => {
    if (!liff.isLoggedIn()) {
      liff.login()
@@ -52,7 +52,13 @@ form.addEventListener('submit', (e) => {
           ${appointDate}`
         }
       ]).then((res) => {
-        liff.closeWindow();
+        liff.sendMessages([{
+          type :'text',
+          text : '#ตรวจสอบข้อมูล'
+        }]).then(()=>{
+          liff.closeWindow();
+        })
+        
       })
       
     });
@@ -61,9 +67,3 @@ form.addEventListener('submit', (e) => {
     
 });
 
-document.getElementById("share").addEventListener("click",()=>{
-  liff.shareTargetPicker([{
-    type : 'text',
-    text : "this is from shareTargetPicker"
-  }])
-})

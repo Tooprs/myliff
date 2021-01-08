@@ -1,7 +1,20 @@
+var firebaseConfig = {
+  apiKey: "AIzaSyBT2kp4K49JZZld2x0DlPc26htXAy6ZAkU",
+  authDomain: "line-bot-7769c.firebaseapp.com",
+  databaseURL: "https://line-bot-7769c.firebaseio.com",
+  projectId: "line-bot-7769c",
+  storageBucket: "line-bot-7769c.appspot.com",
+  messagingSenderId: "318833172832",
+  appId: "1:318833172832:web:c7761021702b5f14bc7e05",
+  measurementId: "G-SMTZR47DPY"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
 const form = document.querySelector('#address');
 let userId = '';
 async function main() {
- await liff.init({ liffId: "1655373907-lNj51d4k" });
+ await liff.init({ liffId: "1655541441-GL6enzey" });
  liff.ready.then(() => {
    if (!liff.isLoggedIn()) {
      liff.login()
