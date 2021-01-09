@@ -14,7 +14,7 @@ var firebaseConfig = {
   //get userId
     let userId = '';
     async function main() {
-     await liff.init({ liffId: "1655373907-EVLZxQJd" });
+     await liff.init({ liffId: "1655541441-GL6enzey" });
      liff.ready.then(() => {
        if (!liff.isLoggedIn()) {
          liff.login()
@@ -48,7 +48,15 @@ document.getElementById("myBtn").addEventListener("click", (e)=>{
   const Note = form.note.value;
   const paymentNotify = firebase.functions().httpsCallable('paymentNotify');
   paymentNotify({id : userId, imageurl : url, note : Note}).then((result) =>{
-    liff.closeWindow() ;
+    liff.sendMessages([
+      {
+        type : "text",
+        text : "แจ้งชำระเงินสำเร็จ"
+      }
+    ]).then(()=>{
+      liff.closeWindow() ;
+    })
+    
   });
     
   }
