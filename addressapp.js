@@ -27,8 +27,8 @@ async function main() {
    });
    
     
- })
-}
+ }
+
 main();
 form.addEventListener('submit', (e) => {
     e.preventDefault();
