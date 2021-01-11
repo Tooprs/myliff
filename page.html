@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สำหรับแอดมินตรวจรายชื่อผู้ป่วยนัด</title>
+    <style>
+        body{
+            margin: 0;
+            background: #fafafa;
+            }
+        .ptlist li{
+            padding: 20px;
+            margin: 10px auto;
+            list-style-type: none;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 1px 1px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <input type="date" name="date" class="input" onchange="myFunction()">
+    <ul class="ptlist">
+        
+    </ul>
+    
+
+
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.24.0/firebase-firestore.js"></script> 
+    
+    <script src="page.js"></script>
+</body>
+</html>
