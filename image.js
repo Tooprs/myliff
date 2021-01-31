@@ -17,7 +17,7 @@ var firebaseConfig = {
      await liff.init({ liffId: "1655541441-GL6enzey" });
      liff.ready.then(() => {
        if (!liff.isLoggedIn()) {
-         //liff.login()
+         liff.login()
        };
        liff.getProfile().then(profile =>{
          userId = profile.userId;
@@ -41,7 +41,7 @@ document.getElementById("myBtn").addEventListener("click", (e)=>{
   e.preventDefault();
   const Note = form.note.value;
   const paymentNotify = firebase.functions().httpsCallable('paymentNotify');
-  firebase.storage().ref('public/'+ userId + '/slip.jpg').put(inputImage).then(async()=>{
+  firebase.storage().ref('public/'+ userId + '/slip.jpg').put(inputImage).then(async ()=>{
   let url = await firebase.storage().ref(`public/${userId}/slip.jpg`).getDownloadURL();
     paymentNotify({id : userId, imageurl : url, note : Note}).then((result) =>{
       liff.sendMessages([
