@@ -43,10 +43,11 @@ var firebaseConfig = {
 
 //call https callable function
 const form = document.querySelector('#notifyPayment');
-document.getElementById("myBtn").addEventListener("click", (e)=>{
+document.getElementById("myBtn").addEventListener("click", async (e)=>{
   e.preventDefault();
   const Note = form.note.value;
   const paymentNotify = firebase.functions().httpsCallable('paymentNotify');
+  await firebase.storage().ref(`public/${userId}/slip.jpg`).getDownloadURL();
   paymentNotify({id : userId, imageurl : url, note : Note}).then((result) =>{
     liff.sendMessages([
       {
