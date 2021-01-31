@@ -32,13 +32,7 @@ var firebaseConfig = {
     let url ;
     imageUpload.onchange = function() {
         let inputImage = this.files[0];
-        firebase.storage().ref('public/'+ userId + '/slip.jpg').put(inputImage).then(()=>{
-            firebase.storage().ref(`public/${userId}/slip.jpg`).getDownloadURL().then((imgURL) =>{
-               url  = imgURL;
-            })
-        }).catch(error =>{
-            console.log(error.message)
-        })
+        
     };
 
 //call https callable function
@@ -47,18 +41,21 @@ document.getElementById("myBtn").addEventListener("click", async (e)=>{
   e.preventDefault();
   const Note = form.note.value;
   const paymentNotify = firebase.functions().httpsCallable('paymentNotify');
-  await firebase.storage().ref(`public/${userId}/slip.jpg`).getDownloadURL();
-  paymentNotify({id : userId, imageurl : url, note : Note}).then((result) =>{
-    liff.sendMessages([
-      {
-        type : "text",
-        text : "แจ้งชำระเงินสำเร็จ"
-      }
-    ]).then(()=>{
-      liff.closeWindow() ;
-    })
-    
+  firebase.storage().ref('public/'+ userId + '/slip.jpg').put(inputImage).then(()=>{
+  let url = await firebase.storage().ref(`public/${userId}/slip.jpg`).getDownloadURL();
+    paymentNotify({id : userId, imageurl : url, note : Note}).then((result) =>{
+      liff.sendMessages([
+        {
+          type : "text",
+          text : "แจ้งชำระเงินสำเร็จ"
+        }
+      ]).then(()=>{
+        liff.closeWindow() ;
+      })
+      
+    });
   });
+  
     
   }
 )
