@@ -28,30 +28,36 @@ var firebaseConfig = {
    
  //upload image   
     const imageUpload = document.getElementById("image");
-    
+    let inputImage;
+    let url ;
+    imageUpload.onchange = function() {
+        let inputImage = this.files[0];
+        firebase.storage().ref('public/'+ userId + '/slip.jpg').put(inputImage).then(()=>{
+            firebase.storage().ref(`public/${userId}/slip.jpg`).getDownloadURL().then((imgURL) =>{
+               url  = imgURL;
+            })
+        }).catch(error =>{
+            console.log(error.message)
+        })
+    };
 
 //call https callable function
 const form = document.querySelector('#notifyPayment');
 document.getElementById("myBtn").addEventListener("click", (e)=>{
   e.preventDefault();
   const Note = form.note.value;
-  let inputImage = imageUpload.files[0];
   const paymentNotify = firebase.functions().httpsCallable('paymentNotify');
-  firebase.storage().ref('public/'+ userId + '/slip.jpg').put(inputImage).then(async ()=>{
-  let url = await firebase.storage().ref(`public/${userId}/slip.jpg`).getDownloadURL();
-    paymentNotify({id : userId, imageurl : url, note : Note}).then((result) =>{
-      liff.sendMessages([
-        {
-          type : "text",
-          text : "แจ้งชำระเงินสำเร็จ"
-        }
-      ]).then(()=>{
-        liff.closeWindow() ;
-      })
-      
-    });
+  paymentNotify({id : userId, imageurl : url, note : Note}).then((result) =>{
+    liff.sendMessages([
+      {
+        type : "text",
+        text : "แจ้งชำระเงินสำเร็จ"
+      }
+    ]).then(()=>{
+      liff.closeWindow() ;
+    })
+    
   });
-  
     
   }
 )
