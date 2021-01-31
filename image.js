@@ -17,7 +17,7 @@ var firebaseConfig = {
      await liff.init({ liffId: "1655541441-GL6enzey" });
      liff.ready.then(() => {
        if (!liff.isLoggedIn()) {
-         liff.login()
+         //liff.login()
        };
        liff.getProfile().then(profile =>{
          userId = profile.userId;
