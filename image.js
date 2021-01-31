@@ -32,7 +32,7 @@ var firebaseConfig = {
     let url ;
     imageUpload.onchange = function() {
         let inputImage = this.files[0];
-        
+        console.log(inputImage);
     };
 
 //call https callable function
@@ -40,7 +40,7 @@ const form = document.querySelector('#notifyPayment');
 document.getElementById("myBtn").addEventListener("click", (e)=>{
   e.preventDefault();
   const Note = form.note.value;
-  console.log(inputImage);
+  
   const paymentNotify = firebase.functions().httpsCallable('paymentNotify');
   firebase.storage().ref('public/'+ userId + '/slip.jpg').put(inputImage).then(async ()=>{
   let url = await firebase.storage().ref(`public/${userId}/slip.jpg`).getDownloadURL();
