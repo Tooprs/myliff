@@ -25,13 +25,14 @@ document.getElementById("myBtn").addEventListener("click", (e)=>{
             }
         }
         if(resultName==undefined){
-            html = '<li>ไม่พบการลงทะเบียน</li>'
+            html = '<li>ไม่พบการลงทะเบียน</li> <li>(หากท่านเพิ่งลงทะเบียนอาจต้องรอเจ้าหน้าที่ตรวจสอบข้อมูลประมาณ1วัน</li>'
         }else if(notAllow==true){
             html = '<li>ขออภัย ท่านไม่เข้าเกณฑ์ฉีดวัคซีนของโรงพยาบาลในรอบนี้ กรุณารอรอบถัดไป</li>'
         }else{
             html = `<li> ${resultName}</li>
             <li>มีนัดฉีดวัคซีนวันที่ ${resultDate}</li>
             <li>เวลา ${resultTime}</li>
+            <li>อาคารเฉลิมพระเกียรติชั้น 7</li>
             <li>หมายเลขคิว ${resultQueue}</li>
             <li>กรุณานำบัตรประชาชนมาติดต่อในวันและเวลาที่กำหนด หากไม่มาจะถือว่าสละสิทธิ์</li>`
         }
@@ -49,3 +50,4 @@ document.getElementById("myBtn").addEventListener("click", (e)=>{
 //test: https://script.google.com/macros/s/AKfycbyAjSc-gf65WxOW6ozq9K7bmryyPUrofgE7L3Pw0NGsEjuIfV4oxJMUu_Jma9M453s-/exec
 //true: https://script.google.com/macros/s/AKfycbwzsaMH1xRPhihUx4h4iZXgUsJqXg5udfOU1t6j5oKeIJv7rrAONgsuaWG-gjOJn82Y/exec
 //test2: https://script.google.com/macros/s/AKfycbyiI9nX3mCx5pQlSTNS55W2WxVroVJubgN4oFkXspBtCppU6z1p5b1glWKZucSdg8TiRQ/exec
+//https://script.google.com/macros/s/AKfycbxIBTqU_8Q-A_ou_Fzjm-BF-5M7cT6mlCcVrjePlpKR39unXX9hatjXxCRl_-JV6Syd/exec
