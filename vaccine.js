@@ -1,6 +1,6 @@
 
 
-let url = 'https://script.google.com/macros/s/AKfycbwzsaMH1xRPhihUx4h4iZXgUsJqXg5udfOU1t6j5oKeIJv7rrAONgsuaWG-gjOJn82Y/exec';
+let url = 'https://script.google.com/macros/s/AKfycbyAjSc-gf65WxOW6ozq9K7bmryyPUrofgE7L3Pw0NGsEjuIfV4oxJMUu_Jma9M453s-/exec';
 document.getElementById("myBtn").addEventListener("click", (e)=>{
     e.preventDefault();
     const idUpload = document.getElementById("id").value;
@@ -45,3 +45,5 @@ document.getElementById("myBtn").addEventListener("click", (e)=>{
 //date = data[0].data[i][9]
 //time = data[0].data[i][10]
 //queue = data[0].data[i][13]
+//test: https://script.google.com/macros/s/AKfycbyAjSc-gf65WxOW6ozq9K7bmryyPUrofgE7L3Pw0NGsEjuIfV4oxJMUu_Jma9M453s-/exec
+//true: https://script.google.com/macros/s/AKfycbwzsaMH1xRPhihUx4h4iZXgUsJqXg5udfOU1t6j5oKeIJv7rrAONgsuaWG-gjOJn82Y/exec
