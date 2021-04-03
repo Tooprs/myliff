@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ตรวจสอบคิวการฉีดวัคซีน</title>
+    <style>
+        * {
+        box-sizing: border-box;
+    }
+    
+    body {
+        height: 100vh;
+        background: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    form {
+        background: white;
+        padding: 60px;
+        width: 550px;
+        max-width: calc(100% - 60px);
+        font-size: xx-large;
+    }
+    
+    .form-element {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 30px;
+    }
+    input {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+    }
+    
+    form button {
+        width: 100%;
+        padding: 20px;
+        color: white;
+        background: #1aaaef;
+        border-radius: 5px;
+        border: none;
+        font-size: 18px;
+    }
+    
+    </style>
+</head>
+<body>
+    <form id="check">
+        <h3>โครงการวัคซีนโควิด รพ. นพรัตนราชธานี</h3>
+        <div>
+            <label for="id">กรุณากรอกเลขประจำตัวประชาชน13หลัก (กรอกเฉพาะตัวเลข):</label><br>
+            <input type="text" id="id" name="id"  required />
+            <p>ตัวอย่าง : 3100800355120</p>
+            
+            
+        </div>
+        
+        
+        <br> <br>
+        <button type ="submit" id = "myBtn">ตรวจสอบสถานะ</button>
+        <br> <br>
+        <ul class="result">
+        
+        </ul>
+    </form>
+    
+
+    
+    <script src="vaccine.js"></script>
+
+   
+</body>
+</html>
