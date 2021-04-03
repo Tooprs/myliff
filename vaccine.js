@@ -32,7 +32,8 @@ document.getElementById("myBtn").addEventListener("click", (e)=>{
             html = `<li> ${resultName}</li>
             <li>มีนัดฉีดวัคซีนวันที่ ${resultDate}</li>
             <li>เวลา ${resultTime}</li>
-            <li>หมายเลขคิว ${resultQueue}</li>`
+            <li>หมายเลขคิว ${resultQueue}</li>
+            <li>กรุณานำบัตรประชาชนมาติดต่อในวันและเวลาที่กำหนด หากไม่มาจะถือว่าสละสิทธิ์</li>`
         }
         document.querySelector('ul').innerHTML = html;
         
