@@ -32,9 +32,9 @@ document.getElementById("myBtn").addEventListener("click", (e)=>{
             html = `<li> ${resultName}</li>
             <li>มีนัดฉีดวัคซีนวันที่ ${resultDate}</li>
             <li>เวลา ${resultTime}</li>
-            <li>อาคารเฉลิมพระเกียรติชั้น 7</li>
+            <li>เดอะมอลล์ บางกะปิ</li>
             <li>หมายเลขคิว ${resultQueue}</li>
-            <li>กรุณานำบัตรประชาชนมาติดต่อในวันและเวลาที่กำหนด หากไม่มาจะถือว่าสละสิทธิ์</li>`
+            <li>ตรวจสอบลำดับชื่อและยื่นลำดับให้เจ้าหน้าที่ลงทะเบียน</li>`
         }
         document.querySelector('ul').innerHTML = html;
         
