@@ -35,7 +35,7 @@ document.getElementById("myBtn").addEventListener("click", (e)=>{
             <li>เวลา ${resultTime}</li>
             <li>สถานที่ ${resultPlace}</li>
             <li>ลำดับสำหรับตรวจสอบรายชื่อ ${resultQueue}</li>
-            <li>ตรวจสอบลำดับชื่อและยื่นลำดับให้เจ้าหน้าที่ลงทะเบียน</li>`
+            <li>กรุณาแจ้งเลขลำดับให้เจ้าหน้าที่ลงทะเบียน</li>`
         }
         document.querySelector('ul').innerHTML = html;
         
